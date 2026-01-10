@@ -68,7 +68,8 @@ def read_root():
     return {"status": "ok", "agent": "Sami Rautanen AI Clone"}
 
 @app.post("/chat")
-@limiter.limit("5/minute") # Strict limit: 5 messages per minute
+@limiter.limit("5/minute")   # Short term: 5 messages per minute
+@limiter.limit("50/day")     # Long term: 50 messages per day per IP (protection!)
 def chat_endpoint(req: ChatRequest, request: Request):
     if not my_agent:
         raise HTTPException(status_code=500, detail="Agent not initialized")
