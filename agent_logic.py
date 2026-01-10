@@ -154,7 +154,7 @@ If the user is engaging in discussion, answer their question first, then delicat
 
         while not done and turns < max_turns:
             turns += 1
-            response = self.openai.chat.completions.create(model="gemini-1.5-flash", messages=messages, tools=tools)
+            response = self.openai.chat.completions.create(model="gemini-2.0-flash", messages=messages, tools=tools)
             
             choice = response.choices[0]
             
