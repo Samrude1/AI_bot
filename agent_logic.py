@@ -81,7 +81,10 @@ class Me:
             
             if (BASE_DIR / "linkedin.txt").exists():
                 self.bio += (BASE_DIR / "linkedin.txt").read_text(encoding="utf-8")
-                
+            
+            if (BASE_DIR / "portfolio.txt").exists():
+                self.bio += "\n\n" + (BASE_DIR / "portfolio.txt").read_text(encoding="utf-8")
+
             if not self.bio:
                 self.bio = "Context missing."
         except Exception as e:

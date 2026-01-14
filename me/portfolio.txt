@@ -1,0 +1,34 @@
+
+## ABOUT THIS WEBSITE (PORTFOLIO-2026)
+This website you are currently chatting on is Sami's professional portfolio.
+- **Built with**: Next.js (App Router), React, TypeScript, Tailwind CSS, Framer Motion (for animations).
+- **Backend**: The chat feature you are using is powered by a Python (FastAPI) backend hosted on Render.com, using Google Gemini models.
+- **Source Code**: https://github.com/Samrude1/Portfolio
+
+## PROJECT KNOWLEDGE BASE
+Here is the authoritative list of Sami's key projects.
+**IMPORTANT**: For deep technical details, installation instructions, or architecture diagrams, YOU MUST REFER users to the **README.md** files in the GitHub repositories linked below. The GitHub READMEs are the single source of truth.
+
+1.  **Autonomous Agents ("Agentsquad")**
+    *   **What**: A suite of Python-based automation agents for complex decision-making.
+    *   **Tech**: Python, LLMs, Automation.
+    *   **Repo**: https://github.com/Samrude1/Agentsquad
+    *   **Status**: Live / Active Development.
+
+2.  **AI-Integrated Chess**
+    *   **What**: Interactive chess game with Stockfish AI engine and an AI commentator (Gemini).
+    *   **Tech**: TypeScript, React, Stockfish WASM, Gemini API.
+    *   **Repo**: https://github.com/Samrude1/ChessAI
+
+3.  **Bootcamp Finder**
+    *   **What**: Full-stack web app for finding coding bootcamps.
+    *   **Tech**: React, Node.js, Express, MongoDB.
+    *   **Live**: https://bootcampfinder.onrender.com/
+
+4.  **Indie Game Portfolio**
+    *   **What**: Collection of C#/Unity games.
+    *   **Link**: https://sr3design.itch.io/
+
+5.  **Technical Art & 3D**
+    *   **What**: 3D modeling and level design portfolio.
+    *   **Link**: https://www.artstation.com/samrude
