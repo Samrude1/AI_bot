@@ -35,7 +35,6 @@ except Exception as e:
 origins = [
     "http://localhost:3000",
     "https://portfolio-seven-rho-74yt50nw74.vercel.app",
-    "*" # For testing, restrict this in production if needed
 ]
 
 app.add_middleware(

@@ -1,6 +1,6 @@
 import os
 import json
-import requests
+
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -31,7 +31,7 @@ def send_email(subject, body):
         msg['Subject'] = subject
         msg.attach(MIMEText(body, 'plain'))
         
-        with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        with smtplib.SMTP('smtp.gmail.com', 587, timeout=10) as server:
             server.starttls()
             server.login(sender_email, sender_password)
             server.send_message(msg)
@@ -41,14 +41,6 @@ def send_email(subject, body):
     except Exception as e:
         print(f"Failed to send email: {e}")
         return False
-
-def push(msg): 
-    token = os.getenv("PUSHOVER_TOKEN")
-    user = os.getenv("PUSHOVER_USER")
-    if token and user:
-        requests.post("https://api.pushover.net/1/messages.json", data={"token": token, "user": user, "message": msg})
-    else:
-        print(f"Pushover not configured. Message: {msg}")
 
 def record_user(email, name="-", notes="-"): 
     # Send email with client details
@@ -63,9 +55,6 @@ Time: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
     send_email(subject, body)
     
-    # Also send push notification if configured
-    push(f"New Lead: {name} ({email}) - {notes}") 
-    
     return {"status": "ok"}
 
 def record_issue(question): 
@@ -78,9 +67,6 @@ Question: {question}
 Time: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
     send_email(subject, body)
-    
-    # Also send push notification
-    push(f"Unknown Q: {question}") 
     
     return {"status": "ok"}
 
