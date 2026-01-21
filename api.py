@@ -34,8 +34,7 @@ except Exception as e:
 # Allow CORS for development and production
 origins = [
     "http://localhost:3000",
-    "https://portfolio-2026.vercel.app",
-    "https://samirautanen.com",
+    "https://portfolio-seven-rho-74yt50nw74.vercel.app",
     "*" # For testing, restrict this in production if needed
 ]
 
