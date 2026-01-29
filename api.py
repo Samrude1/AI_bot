@@ -33,14 +33,10 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 #     print(f"DIAGNOSTIC ERROR: {e}")
 
 # Allow CORS for development and production
-origins = [
-    "http://localhost:3000",
-    "https://portfolio-seven-rho-74yt50nw74.vercel.app",
-]
-
+# Using allow_origin_regex to support all Vercel preview deployments
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origin_regex=r"https://.*\.vercel\.app|https://samirautanen\.fi|https://www\.samirautanen\.fi|http://localhost:3000",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
