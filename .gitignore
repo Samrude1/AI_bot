@@ -20,3 +20,8 @@ env/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Deployment and setup documentation (private)
+DEPLOY_AGENT.md
+EMAIL_SETUP.md
+EMAIL_FIX_INSTRUCTIONS.md
